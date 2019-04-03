@@ -1,0 +1,93 @@
+.daiqu_list{
+  border-bottom:1px solid #ccc;
+  margin:0px 0;
+  padding:10px;
+  position:relative;
+  }
+
+.daiqu_list text{
+  font-size:16px;
+  color:#1e1e1e;
+  }
+
+.daiqu_list view{
+  font-size:14px;
+  padding:5px 0;
+  }
+
+.daiqu_list button{
+  position:absolute;
+  right:15px;
+  top:12px;
+}
+
+.daiqu_list button.modify{
+  right:90px;
+  }
+
+.weui-media-box__info__operate{
+  float:right;
+  color:#1e1e1e;
+  padding-right:0em;
+}
+
+.weui-media-box{
+  padding-bottom: 0px;
+}
+
+.weui-media-time{
+  width:400rpx;
+  height: 1em;
+  overflow: hidden;
+}
+
+.weui-cells__title{
+  text-align: left;
+}
+textarea,input{
+  text-align: left;
+  color:#1e1e1e;
+}
+.weui-cells {
+  border:1px solid #3891f8;
+}
+.weui-cells__title{
+  padding-left: 0px;
+  color:#1e1e1e;
+}
+.weui-dialog__ft button{
+  background: none;
+  padding: 0px;
+  margin: 0px;
+}
+form .weui-dialog__bd:first-child {
+  padding:0px 30rpx 1.7em;
+  
+}
+.page__ft{
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+
+.searchbar-result{
+  border:none;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.searchbar-result:before{
+    display: none;
+}
+
+.weui-icon-search{
+  margin-top: 8px;
+}
+
+.weui-search-bar__text{
+  margin-bottom: 4px;
+}
+
+.weui-media-box__title_in-text{
+  color: #1e1e1e;
+}

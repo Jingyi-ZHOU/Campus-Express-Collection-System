@@ -1,0 +1,90 @@
+<!-- 新建活动 -->
+<view class="add-page">
+  <form bindsubmit="submitForm">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{TopTips}}</view>
+    <view class="mod-a">
+      <!-- 基本信息1 -->
+      <view class="mod t-sperson">
+        <text class="key">收件人</text>
+        <input name="sperson" class="input" maxlength="100" placeholder="请输入收件人名称" value="{{sperson}}" />
+      </view>
+      <!-- 基本信息2 -->
+      <view class="mod t-stel">
+        <text class="key">手机号</text>
+        <input name="stel" class="input" maxlength="100" placeholder="请输入收件人电话" value="{{stel}}" />
+      </view>
+      <!-- 基本信息3 -->
+      <view class="mod t-kdno">
+        <text class="key">取件号</text>
+        <input name="kdno" class="input" maxlength="100" placeholder="请输入短信取件号" value="{{kdno}}" />
+      </view>
+    </view>
+
+    <view class="mod-a mt20">
+      <!-- 快递内容 -->
+      <view class="mod t-kcon">
+        <text class="key">快递内容</text>
+        <input name="kcon" class="input" maxlength="100" placeholder="请输入快递内容" value="{{kcon}}" />
+      </view>
+      <!-- 订单价值 -->
+      <view class="mod t-hprice">
+        <text class="key">订单价值</text>
+        <input name="hprice" type="number" class="input" maxlength="100" placeholder="请输入订单价值" value="{{hprice}}" />
+      </view>
+    </view>
+
+    <view class="mod-a mt20">
+      <!-- 取件点 -->
+      <view class="mod t-sign-time">
+        <text class="key">取件地点</text>
+        <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+          <view class="value" name="types">{{types[typeIndex]}}
+          </view>
+        </picker>
+      </view>
+      <!-- 收件点 -->
+      <view class="mod t-sign-time">
+        <text class="key">收件地点</text>
+        <picker bindchange="bindTypesChange" value="{{typesIndex}}" range="{{typess}}">
+          <view class="value" name="typess">{{typess[typesIndex]}}
+          </view>
+        </picker>
+      </view>
+      <!-- 到货日期 -->
+      <view class="mod t-sign-time" value="{{kdatee}}">
+        <text class="key">到货日期</text>
+        <picker mode="date" value="{{date}}" start="2018-01-01" end="2020-01-01" bindchange="bindDateChange">
+          <view class="value" name="kdate">{{date}}</view>
+        </picker>
+        <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindTimeChange">
+    <view class="value" name="{{kdate2}}">{{time}}</view>
+        </picker>
+      </view>
+      <!-- 收件时间 -->
+      <view class="mod t-sign-time" value="{{htimee}}">
+        <text class="key">收件时间</text>
+        <picker mode="date" value="{{date2}}" start="2018-01-01" end="2020-01-01" bindchange="bindDateChange2">
+          <view class="value" name="htime">{{date2}}</view>
+        </picker>
+        <picker mode="time" value="{{time2}}" start="00:00" end="24:00" bindchange="bindTimeChange2">
+    <view class="value" name="{{htime2}}">{{time2}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 订单备注 -->
+    <view class="mod-a mt20">
+      <view class="mod-big my-nick">
+        <textarea name="hps" class="weui-textarea" placeholder="请输入订单备注" value="{{hps}}" style="height: 7em" bindinput="bindTextAreaChange" maxlength="{{noteMaxLen}}" />
+        <view class="chnumber">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+
+    <!-- 确认下单 -->
+    <view class="mod-a mt20">
+      <view class="submit-btn">
+        <button class='button' loading="{{isLoading}}" hover-start-time="200" disabled="{{isdisabled}}" formType="submit">下单</button>
+      </view>
+    </view>
+  </form>
+</view>

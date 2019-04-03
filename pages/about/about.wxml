@@ -1,0 +1,14 @@
+<view class="about">
+  <view class="about-item">
+    <text class="about-item-title">关于项目</text>
+    <text class="about-item-content">微信小程序-校园快递顺风车前端</text>
+  </view>
+  <view class="about-item">
+    <text class="about-item-title">责任声明</text>
+    <text class="about-item-content">本项目由仅用于合肥工业大学毕业设计，插件代码来自开源库</text>
+  </view>
+  <view class="about-item">
+    <text class="about-item-title">当前版本</text>
+    <text class="about-item-content ">v0.0.1 Beta</text>
+  </view>
+</view>

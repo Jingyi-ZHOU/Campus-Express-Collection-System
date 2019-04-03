@@ -1,0 +1,58 @@
+<view class="daiqu-list">
+  <view class="page">
+    <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
+      <view class="page__bd">
+        <view class="weui-panel">
+          <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+              <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                  <icon type="clear" size="14"></icon>
+                </view>
+              </view>
+              <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <icon class="weui-icon-search" type="search" size="14"></icon>
+                <view class="weui-search-bar__text">搜索</view>
+              </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+          </view>
+          <view class="weui-panel__hd">代取订单</view>
+          <view class="weui-panel__bd">
+            <block wx:if="{{daiquList.length>0}}">
+              <view class="weui-media-box weui-media-box_text" wx:for="{{daiquList}}" wx:key="daiquItem" hidden='{{item.isAccept}}'>
+                <view class="weui-media-box__title weui-media-box__title_in-text">
+              {{item.dno}}—————到—————{{item.saddress}}</view>
+                <view class="weui-media-box__desc">快递内容： {{item.kcon}}</view>
+                <view class="weui-media-box__desc">订单出价： {{item.hprice}}</view>
+                <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta weui-media-time">下单时间：{{item.updatedAt}}</view>
+                  <view class="weui-media-box__info__meta weui-media-time">交接时间：{{item.htime}}</view>
+                  <view class="weui-media-box__info__meta weui-media-box__info__operate">
+                    <icon type="success edits" size="16"></icon>
+                    <text wx:if="{{item.isAccept}}" data-id="{{item.objectId==true}}" data-content="{{item.dno}}" data-title="{{item.saddress}}">已接</text>
+                    <text wx:else catchtap="toAcceptOrder" data-id="{{item.objectId}}" data-content="{{item.dno}}" data-title="{{item.saddress}}">接单</text>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
+            <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media-box__title weui-media-box__title_in-text">
+             暂无内容，请点击屏幕下方下单</view>
+              <view class="weui-media-box__desc"></view>
+            </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+        <view class="btn-plus" bindtap="toOrderPlus">
+                <image class="icon" src="../../images/iconfont-plus-circle.png" />
+                <text>下单</text>
+        </view>
+</view>
