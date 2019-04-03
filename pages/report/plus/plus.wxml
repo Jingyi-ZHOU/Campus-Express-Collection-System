@@ -1,0 +1,17 @@
+<view class="add-page">
+  <form bindsubmit="submitForm">
+    <!-- 申请理由 -->
+    <view class="mod-a mt20">
+      <view class="mod-big my-nick">
+        <textarea name="zscon" class="weui-textarea" placeholder="请输入申请理由" value="{{zscon}}" style="height: 10em" bindinput="bindTextAreaChange" maxlength="{{noteMaxLen}}" />
+        <view class="chnumber">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+    <!-- 确认申请 -->
+    <view class="mod-a mt20">
+      <view class="submit-btn">
+        <button class='button' loading="{{isLoading}}" hover-start-time="200" disabled="{{isdisabled}}" formType="submit">申请</button>
+      </view>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,75 @@
+<view class="container">
+    <view class="go-center"style class="magin-top:10px">
+            <view class='tab-box'>
+                <view class="tab-box-item {{tabIndex==0?'active-color':''}}" bindtap='changeTab' data-index="0"style='width:50%'>发出的订单</view>
+                <view class="tab-box-item {{tabIndex==1?'active-color':''}}" bindtap='changeTab' data-index="1"style='width:50%'>接收的订单</view>
+            </view>
+    </view>
+    <block wx:if="{{tabIndex==0}}">
+      <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
+        <view class="page__bd">
+          <view class="weui-panel__bd">
+            <block wx:if="{{sentList.length>0}}">
+              <view class="weui-media-box weui-media-box_text" wx:for="{{sentList}}" wx:key="sentItem">
+                <view class="weui-media-box__title weui-media-box__title_in-text">
+              {{item.dno}}—————到—————{{item.saddress}}</view>
+                <view class="weui-media-box__desc">快递内容： {{item.kcon}}</view>
+                <view class="weui-media-box__desc">订单出价： {{item.hprice}}</view>
+                <view class="weui-media-box__desc">交接时间： {{item.htime}}</view>
+                <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta weui-media-box__info__operate">
+                  <image src="../images/toDetail.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text catchtap="toDetail" data-id="{{item.objectId}}" data-content="{{item.dno}}" data-title="{{item.saddress}}">查看详情 </text>
+                  <image src="../images/toChat.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text catchtap="toChat" data-id="{{item.objectId}}" data-content="{{item.dno}}" data-title="{{item.saddress}}">在线交流 </text>
+                  <image wx:if="{{item.isShou}}" src="../images/confirmed.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <image wx:else src="../images/toConfirm.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text wx:if="{{item.isShou}}" data-id="{{item.objectId}}" data-isShou="{{item.isShou}}">已经收货 </text>
+                  <text wx:else catchtap="toConfirmShou" data-id="{{item.objectId}}" data-isShou="{{item.isShou}}">确认收货 </text>
+                  <image wx:if="{{item.isReport}}" src="../images/reported.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <image wx:else src="../images/toReport.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text wx:if="{{item.isReport}}" data-id="{{item.objectId}}">正在仲裁 </text>
+                  <text wx:else catchtap="toReport" data-id="{{item.objectId}}">申请仲裁 </text>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </block>
+
+    <block wx:else>
+      <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
+        <view class="page__bd">
+          <view class="weui-panel__bd">
+            <block wx:if="{{tookList.length>0}}">
+              <view class="weui-media-box weui-media-box_text" wx:for="{{tookList}}" wx:key="tookItem">
+                <view class="weui-media-box__title weui-media-box__title_in-text">
+              {{item.dno}}—————到—————{{item.saddress}}</view>
+                <view class="weui-media-box__desc">快递内容： {{item.kcon}}</view>
+                <view class="weui-media-box__desc">订单出价： {{item.hprice}}</view>
+                <view class="weui-media-box__desc">交接时间： {{item.htime}}</view>
+                <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta weui-media-box__info__operate">
+                  <image src="../images/toDetail.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text catchtap="toDetail" data-id="{{item.objectId}}">查看详情 </text>
+                  <image src="../images/toChat.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text catchtap="toChat" data-id="{{item.objectId}}">在线交流 </text>
+                  <image wx:if="{{item.isQu}}" src="../images/confirmed.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <image wx:else src="../images/toConfirm.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text wx:if="{{item.isQu}}" data-id="{{item.objectId}}" data-isQu="{{item.isQu}}">已经取货 </text>
+                  <text wx:else catchtap="toConfirmQu" data-id="{{item.objectId}}">确认取货 </text>
+                  <image wx:if="{{item.isReport}}" src="../images/reported.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <image wx:else src="../images/toReport.png" style="vertical-align:middle;width:20px;height:20px;"></image>
+                  <text wx:if="{{item.isReport}}" catchtap="toReport" data-id="{{item.objectId}}">正在仲裁 </text>
+                  <text wx:else catchtap="toReport" data-id="{{item.objectId}}">申请仲裁 </text>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </block>
+</view>

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="weui-media-box__desc">订单编号： {{oneOrder.objectId}}</view>
+  <view class="weui-media-box__desc">下单用户： {{oneOrder.xduser}}</view>
+  <view class="weui-media-box__desc">接单用户： {{oneOrder.jduser}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">收件人名： {{oneOrder.sperson}}</view>
+  <view class="weui-media-box__desc">手机号码： {{oneOrder.stel}}</view>
+  <view class="weui-media-box__desc">取件地点： {{oneOrder.dno}}</view>
+  <view class="weui-media-box__desc">到货时间： {{oneOrder.kdate}}</view>
+  <view class="weui-media-box__desc">取件编号： {{oneOrder.kdno}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">交接地点： {{oneOrder.saddress}}</view>
+  <view class="weui-media-box__desc">交接时间： {{oneOrder.htime}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">快递内容： {{oneOrder.kcon}}</view>
+  <view class="weui-media-box__desc">订单出价： {{oneOrder.hprice}}</view>
+  <view class="weui-media-box__desc">订单备注： {{oneOrder.hps}}</view>
+  <view class="weui-media-box__desc">下单时间： {{oneOrder.createdAt}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">是否取货： {{oneOrder.isQu}}</view>
+  <view class="weui-media-box__desc">是否收货： {{oneOrder.isShou}}</view>
+  <view class="weui-media-box__desc">有无纠纷： {{oneOrder.isReport}}</view>
+  <view class="weui-media-box__desc">仲裁单号： {{oneOrder.reportId}}</view>
+</view>

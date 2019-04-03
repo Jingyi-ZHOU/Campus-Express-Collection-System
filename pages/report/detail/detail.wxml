@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="weui-media-box__desc">仲裁订单： {{oneReport.objectId}}</view>
+  <view class="weui-media-box__desc">代取订单： {{oneReport.hno}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">申请用户： {{oneReport.ssno}}</view>
+  <view class="weui-media-box__desc">接受用户： {{oneReport.jsno}}</view>
+  <view class="weui-media-box__desc">申请理由： {{oneReport.zscon}}</view>
+  <view class="weui-media-box__desc">回复理由： {{oneReport.jsreply}}</view>
+  <view class="weui-media-box__desc">  </view>
+  <view class="weui-media-box__desc">是否回复： {{oneReport.isReply}}</view>
+  <view class="weui-media-box__desc">是否开始： {{oneReport.isStart}}</view>
+  <view class="weui-media-box__desc">是否结束： {{oneReport.isDone}}</view>
+  <view class="weui-media-box__desc">仲裁结果： {{oneReport.zresult}}</view>
+  <view class="weui-media-box__desc">结果日期： {{oneReport.zdate}}</view>
+</view>

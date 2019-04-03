@@ -1,0 +1,2 @@
+<image class="start-image" src="../images/start.jpg"></image>
+<button class="button-img" bindtap="start" >立即体验</button>

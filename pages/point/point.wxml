@@ -1,0 +1,31 @@
+<view class="daiqu-list">
+  <view class="page">
+    <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
+      <view class="page__bd">
+        <view class="weui-panel">
+          <view class="weui-panel__hd">当前积分：{{numUser.snum}}</view>
+          <view class="weui-panel__bd">
+            <block wx:if="{{numList.length>0}}">
+              <navigator class="weui-media-box weui-media-box_text" wx:for="{{numList}}" wx:key="numItem" url="/pages/order/detail/detail?nowId={{item.objectId}}" hidden='{{item.jduser==numUser.sname && item.isShou==false}}'>
+                <view wx:if="{{item.xduser==numUser.sname}}" class="weui-media-box__title weui-media-box__title_in-text">为订单“{{item.objectId}}”花去 {{item.hprice}}积分</view>
+                <view wx:if="{{item.jduser==numUser.sname}}" class="weui-media-box__title weui-media-box__title_in-text">从订单“{{item.objectId}}”赚得 {{item.hprice}}积分</view>
+                <view class="weui-media-box__desc">快递路径： {{item.dno}} 至 {{item.saddress}}</view>
+                <view class="weui-media-box__desc">快递内容： {{item.kcon}}</view>
+                <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta weui-media-time">下单时间：{{item.updatedAt}}</view>
+                </view>
+              </navigator>
+            </block>
+            <block wx:else>
+            <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media-box__title weui-media-box__title_in-text">
+             暂无积分记录</view>
+              <view class="weui-media-box__desc"></view>
+            </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

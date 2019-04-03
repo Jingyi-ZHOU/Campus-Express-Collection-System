@@ -1,0 +1,75 @@
+.container {
+    width: 555px;
+    overflow: hidden;
+}
+.active-color {
+    background: #99CCFF;
+}
+.tab-box-item{
+    flex: 1;
+    text-align: center;
+    font-size: 24rpx;
+    height: 60rpx;
+    color: #999999;
+    line-height: 60rpx;
+  }
+
+.note-btn {
+    font-size: 14px;
+    color:grey;
+    /* margin-left: 100px; */
+    text-align: center;
+    margin-right: 160px;
+    
+    /* width: 50%; */
+   
+}
+.dingdan-i {
+    color: grey;
+     text-align: center;
+}
+.tab-box {
+    width: 50%;
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin-left: 45px;
+    margin-top: 10px;
+}
+.img-box2 {
+    height: 70px;
+    width: 70px; 
+    margin-left: 70px;
+    
+}
+
+.sent-list{
+  border-bottom:1px solid #ccc;
+  margin:0px 0;
+  padding:10px;
+  position:relative;
+  }
+
+.took-list{
+  border-bottom:1px solid #ccc;
+  margin:0px 0;
+  padding:10px;
+  position:relative;
+  }
+
+.sent-list text{
+  font-size:16px;
+  color:#1e1e1e;
+  }
+
+.took-list text{
+  font-size:16px;
+  color:#1e1e1e;
+  }
+
+.weui-media-box__info__operate {
+  color:#1e1e1e;
+  padding-right:0em;
+
+}
+
