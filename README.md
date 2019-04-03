@@ -1,6 +1,6 @@
 # Campus-Express-Collection-System
-WeChat Mini Program
-In recent years, with the rapid development of the logistics industry, a huge amount of express delivery asks for high logistics distribution efficiency. 
+WeChat Mini Program\n
+In recent years, with the rapid development of the logistics industry, a huge amount of express delivery asks for high logistics distribution efficiency. \n
 And universities are in a special area of express delivery services. 
 On campus, for the sake of security, it is very inconvenient to dispatch express mails and pick up the deliveries. 
 The ‘last mile’ of campus logistics express has become a bottleneck restricting the development of logistics express delivery in colleges and universities. 
