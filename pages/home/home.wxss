@@ -1,0 +1,37 @@
+.swiper {
+  height: 380rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.btn-bar {
+  display: flex;
+  margin-top: 50px;
+}
+.btn-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn-op {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 10px;
+  color:white; 
+  padding: 5px 20px;
+  border:1px solid white;
+  width: 280px;
+  background-color: #99CCFF;
+}
+.img-box {
+  width: 90%;
+  height: 370rpx;
+  text-align: center;
+}
+.ad-box {
+  margin-top: 45px;
+  width: 100%;
+  text-align: center;
+}
